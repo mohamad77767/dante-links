@@ -108,128 +108,29 @@ h1{
 }
 .tag{color:var(--muted);font-size:14px;letter-spacing:2px;margin:0 0 30px}
 .intro{color:#c9c9c9;font-size:14px;line-height:1.7;margin:0 0 24px}
-.links{display:grid;gap:15px}
-
-/* Dante-style link frames */
-.links a{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  min-height:70px;
-  padding:12px 18px;
-  border:1px solid #51434a;
-  border-radius:5px;
-  background:
-    linear-gradient(135deg,rgba(25,19,23,.97),rgba(8,9,13,.97));
+.links{display:grid;gap:13px}
+a{
+  min-height:62px;
+  border:1px solid #373941;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(23,24,29,.94),rgba(10,11,15,.94));
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:15px;
-  color:#f5f2f2;
+  gap:12px;
+  color:#fff;
   text-decoration:none;
   font-size:17px;
-  font-weight:600;
-  letter-spacing:.5px;
+  font-weight:700;
+  transition:transform .18s,border-color .18s,background .18s;
   backdrop-filter:blur(5px);
-  clip-path:polygon(
-    0 13px,13px 0,
-    calc(100% - 13px) 0,100% 13px,
-    100% calc(100% - 13px),
-    calc(100% - 13px) 100%,
-    13px 100%,0 calc(100% - 13px)
-  );
-  transition:transform .25s,filter .25s,background .25s;
 }
-
-/* Inner metallic frame */
-.links a::before{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  inset:4px;
-  border:1px solid rgba(220,205,210,.16);
-  clip-path:polygon(
-    0 9px,9px 0,
-    calc(100% - 9px) 0,100% 9px,
-    100% calc(100% - 9px),
-    calc(100% - 9px) 100%,
-    9px 100%,0 calc(100% - 9px)
-  );
-  pointer-events:none;
-}
-
-/* Moving crimson light */
-.links a::after{
-  content:"";
-  position:absolute;
-  z-index:0;
-  top:-20%;
-  left:-55%;
-  width:38%;
-  height:140%;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(170,20,38,.08),
-    rgba(220,35,55,.38),
-    rgba(255,80,90,.12),
-    transparent
-  );
-  transform:skewX(-25deg);
-  animation:danteGlow 5s ease-in-out infinite;
-  pointer-events:none;
-}
-
-.links a:nth-child(2)::after{
-  animation-delay:2.5s;
-}
-
-.links a:hover{
-  transform:translateY(-3px);
-  filter:
-    drop-shadow(0 0 5px rgba(180,25,42,.35))
-    drop-shadow(0 0 12px rgba(180,25,42,.16));
-  background:linear-gradient(135deg,#211519,#0d0b10);
-}
-
-.links a:active{
-  transform:scale(.98);
-}
-
-@keyframes danteGlow{
-  0%,15%{left:-55%;opacity:0}
-  25%{opacity:1}
-  75%{opacity:1}
-  100%{left:120%;opacity:0}
-}
-
-.icon{
-  width:23px;
-  height:23px;
-  display:inline-grid;
-  place-items:center;
-  font-size:20px;
-  position:relative;
-  z-index:1;
-}
-.links a{
-  text-shadow:0 0 8px rgba(255,255,255,.12);
-}
-.links a > *{
-  position:relative;
-  z-index:1;
-}
-footer{
-  margin-top:35px;
-  color:#777;
-  font-size:11px;
-  letter-spacing:2px;
-}
-
+a:hover{transform:translateY(-2px);border-color:#aaa;background:#1d1e24}
+.icon{width:23px;height:23px;display:inline-grid;place-items:center;font-size:20px}
+footer{margin-top:35px;color:#777;font-size:11px;letter-spacing:2px}
 @media(prefers-reduced-motion:reduce){
   .meteor{animation:none;display:none}
-  .links a::after{animation:none;display:none}
-  .links a{transition:none}
+  a{transition:none}
 }
 </style>
 </head>
@@ -242,18 +143,14 @@ footer{
   <h1>DANTE</h1>
   <p class="tag">@xu5._</p>
   <p class="intro">Official links<br>قناة التليگرام و الديسكورد</p>
-
   <nav class="links" aria-label="Official links">
     <a href="https://discord.gg/BGv2pTDDXn" target="_blank" rel="noopener noreferrer">
-      <span class="icon" aria-hidden="true">◈</span>
-      Discord Server
+      <span class="icon" aria-hidden="true">◈</span> Discord Server
     </a>
     <a href="https://t.me/T7S_Cmmty" target="_blank" rel="noopener noreferrer">
-      <span class="icon" aria-hidden="true">➤</span>
-      Telegram Community
+      <span class="icon" aria-hidden="true">➤</span> Telegram Community
     </a>
   </nav>
-
   <footer>T7S · OFFICIAL</footer>
 </main>
 
@@ -280,7 +177,6 @@ footer{
     dot.style.setProperty('--drift', drift);
     dot.style.setProperty('--tail', tail);
     dot.style.setProperty('--bright', bright);
-
     layer.appendChild(dot);
   }
 })();
